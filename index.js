@@ -11,13 +11,16 @@ const reviewRouter = require("./routers/reviewRouter");
 const app = express();
 
 // define the port
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // import cors library
 const cors = require("cors");
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: [
+      "http://localhost:3000",
+      "https://presentious1-frontend.herokuapp.com",
+    ],
   })
 );
 
